@@ -1,0 +1,275 @@
+@import "reset.css";
+/*引入css文件的一种方式*/
+/*
+
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#99ffffff,endColorstr=#99ffffff)";
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);
+background:rgba(255,255,255,.8);
+
+
+ filter:alpha(opacity=40); 针对 IE8 以及更早的版本 */
+ body
+ 	font-size 16Px
+ 	font-family 'arial','micrsoft yahei'
+
+.container
+	width 100%
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	height 100vh
+	// overflow hidden
+	&::-webkit-scrollbar 
+		display none
+.w640
+	width 33.33%
+.w1280
+	width 66.66%
+
+.weather
+	padding-top 24px
+	text-align center
+	color #fff
+	background #0289ff
+	box-sizing border-box
+	height 538px
+	.class
+		font-size 60px
+		line-height 127px
+		span
+			color #ffc211
+	.time
+		font-size 80px
+		line-height 129px
+	.date
+		font-size 30px
+		line-height 43px
+	.temperature
+		padding-top 23px
+		font-size 80px
+		line-height 117px
+		&.sun
+			span
+				background url('../img/769bda9a7da9b1ddecaad61c7619c83f.png') left center/68px no-repeat
+		span
+			padding-left 80px
+	.duty
+		line-height 73px
+		font-size 24px
+		span
+			font-size 30px
+		i
+			padding-left 16px
+
+.banner
+	img
+	a
+		display block
+		height 538px
+
+.public-h3
+	padding-bottom 17px
+	font-size 36px
+	line-height 80px
+.df
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+.notice
+	background #ffc211 url('../img/3db86655a76e0a762acf48c356a42d3f.png') right 25px top no-repeat
+	color #fff
+	height 400px
+	h3
+		padding 0 90px 17px
+	p
+		font-size 24px
+		line-height 36px
+		padding 0 90px
+		text-align justify
+	.swiper-button-prev
+	.swiper-button-next
+		background none
+		svg
+			fill #fff
+			transition 0.3s
+		&:hover
+			svg 
+				fill #007aff
+
+.w75
+	width 75%
+.today-curriculum
+	// w960
+	height 400px
+	.wrap
+		padding 0 50px
+		background url('../img/e28859069ba6b8d3087cc34a2499955d.png') 40px 7px/128px auto no-repeat
+	h3
+		color #0289ff
+		text-align center
+	.table
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		font-size 24px
+		line-height 1
+		color #000
+		border-bottom 4px solid #ffc211
+		.w50
+			width 50%
+			box-sizing border-box
+			&>*
+				padding-left 4px
+				position relative
+				&:after
+					content ""
+					position absolute
+					left 0
+					top 0
+					bottom 0
+					border-left 4px solid #ffc211
+					z-index 1	
+				&.no-left
+					&:after
+						display none
+			&+.w50
+				&>*
+					&:before
+						position absolute
+						content ""
+						right 0
+						top 0
+						bottom 0
+						border-right 4px solid #ffc211
+					&.no-left
+						&:before
+							display none
+		.row
+			background #fff
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			height 52px
+			align-items center
+			text-align center
+			.flex-0-0-65
+				flex 0 0 65px
+			.flex-0-0-90
+				flex 0 0 90px
+			.flex-0-0-170
+				flex 0 0 170px
+			.flex-1-0-auto
+				flex 1 0 auto
+		.bgeeeeee
+			background #eee
+		.bgffc211
+			background #ffc211
+		.bg0289ff
+			background #0289ff
+		.cfff
+			color #fff
+.w25
+	width 25%
+.hot-new
+	// w320
+	height 400px
+	background #efefef
+	padding 0 34px
+	box-sizing border-box
+	h3
+		color #0289ff
+	.wrap
+		height 230px
+		// .swiper-slide
+		// 	display -webkit-flex
+		// 	display -moz-flex
+		// 	display -ms-flex
+		// 	display -o-flex
+		// 	display flex
+		// 	align-items center
+		.swiper-container
+			height 100%
+			font-size 22px
+			color #0662b1
+			line-height 38px		
+			a
+				padding 5px
+				width:100%;
+				box-sizing border-box
+				text-align justify
+				&:hover
+					background #fff
+
+
+.check-work
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	align-items center
+	justify-content center
+	height 140px
+	.wrap
+		padding 20px 0 20px 100px
+		background url('../img/62d758433121a1dd4db56539d37a1980.png') left center/64px auto no-repeat
+		color #000
+		line-height 1
+		h3
+			padding-bottom 20px
+			font-size 30px
+		p
+			font-size 24px
+			span+span
+				padding-left 10px
+.nav
+	height 140px
+	background #037de7
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	align-items center
+	justify-content center
+	a
+		display block
+		padding 0 33px
+		transition 0.3s
+		height 100%
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		font-size 24px
+		color #fff
+		align-items center
+		&:hover
+			background #0267be
+.set
+	height 140px
+	background #ffc211
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	align-items center
+	justify-content flex-end
+	a
+		display block
+		height 100%
+		width 150px
+		background url("../img/61b72458ffbed7ae2704c750e4e8830e.png") right 45px center/48px auto no-repeat
+		transition 0.3s
+		&:hover
+			background-color #e2ac0e
