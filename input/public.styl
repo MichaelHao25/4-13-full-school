@@ -90,15 +90,26 @@ background:rgba(255,255,255,.8);
 		line-height 36px
 		padding 0 90px
 		text-align justify
+		.date
+			display block
+			padding-bottom 5px
+			border-bottom 1px solid #fff
+			margin-bottom 5px
 	.swiper-button-prev
 	.swiper-button-next
 		background none
+		padding 10px
+		transform translateY(-10px)
+		transition 0.3s
+		border-radius 5px
 		svg
 			fill #fff
 			transition 0.3s
 		&:hover
 			svg 
 				fill #007aff
+		&:active
+			background rgba(255,255,255,0.4)
 
 .w75
 	width 75%
@@ -199,7 +210,7 @@ background:rgba(255,255,255,.8);
 			height 100%
 			font-size 22px
 			color #0662b1
-			line-height 38px		
+			line-height 38px
 			a
 				padding 5px
 				width:100%;
@@ -207,6 +218,9 @@ background:rgba(255,255,255,.8);
 				text-align justify
 				&:hover
 					background #fff
+		.swiper-slide
+			border-bottom 1px solid #0662b1	
+			box-sizing border-box
 
 
 .check-work

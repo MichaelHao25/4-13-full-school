@@ -11,8 +11,9 @@ function changeName(url) {
 		var strdata = data.toString()
 		for (attr in arryfilename) {
 			console.log(attr + '.' + arryfilename[attr][1])
-			var re = new RegExp(attr + '.' + arryfilename[attr][1], 'gi')
-			strdata = strdata.replace(re, arryfilename[attr][0] + '.' + arryfilename[attr][1]);
+			// var re = new RegExp('img/' + attr + '.' + arryfilename[attr][1], 'gi')
+			var re = new RegExp('img/' + attr.split('$')[0] + '.' + arryfilename[attr][1], 'gi')
+			strdata = strdata.replace(re, 'img/' + arryfilename[attr][0] + '.' + arryfilename[attr][1]);
 		}
 		fs.writeFile(url, strdata, function(error) {
 			if (error) {
@@ -89,12 +90,13 @@ function myhash(fileDirectory, filename, filelength) {
 		var newname = hash.digest('hex');
 		var exte = filename.split('.')
 		rename(fileDirectory, filename, newname + '.' + exte[exte.length - 1])
-		arryfilename[exte[0]] = [newname, exte[exte.length - 1]]
+		// arryfilename[exte[0]] = [newname, exte[exte.length - 1]]
+		arryfilename[exte[0] + '$' + exte[exte.length - 1]] = [newname, exte[exte.length - 1]]
 		var jsonLength = 0
 		for (var attr in arryfilename) {
 			jsonLength++
 		}
-		if (jsonLength == 5) {
+		if (jsonLength == filelength) {
 			console.log(arryfilename);
 			// changeName(fileDirectory)
 			readHtml(fileDirectory);
