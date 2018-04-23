@@ -232,7 +232,7 @@ background:rgba(255,255,255,.8);
 	display flex
 	align-items center
 	justify-content center
-	height 140px
+	height 96px
 	.wrap
 		padding 20px 0 20px 100px
 		background url('../img/62d758433121a1dd4db56539d37a1980.png') left center/64px auto no-repeat
@@ -246,7 +246,7 @@ background:rgba(255,255,255,.8);
 			span+span
 				padding-left 10px
 .nav
-	height 140px
+	height 96px
 	background #037de7
 	display -webkit-flex
 	display -moz-flex
@@ -271,7 +271,7 @@ background:rgba(255,255,255,.8);
 		&:hover
 			background #0267be
 .set
-	height 140px
+	height 96px
 	background #ffc211
 	display -webkit-flex
 	display -moz-flex
@@ -337,11 +337,11 @@ background:rgba(255,255,255,.8);
 				color #000
 				line-height 38px
 	.bb-notice
-		height 140px
+		height 96px
 		.pic
 			height 100%
-			width 140px
-			background url('../img/通知2.png') center center/64px auto no-repeat
+			width 96px
+			background url('../img/d31bcdc5fa72433b1e662e3fa8c0dfd2.png') center center/64px auto no-repeat
 		.content
 			width calc(100% - 140px)
 			height 100%
@@ -374,7 +374,7 @@ background:rgba(255,255,255,.8);
 		display flex
 		align-items center
 		justify-content center
-		background url('../img/图层1.jpg') center center/auto 100% no-repeat
+		background url('../img/d8b75a09df1cb49464faf7d88aba4c47.jpg') center center/auto 100% no-repeat
 		.content
 			color #fff
 			text-align center
@@ -397,7 +397,7 @@ background:rgba(255,255,255,.8);
 		display flex
 		justify-content center
 		text-align center
-		background url('../img/图层1_52.jpg') center center/100% 100% no-repeat
+		background url('../img/b4f05ad4e03379d5bb3e97d41f073f13.jpg') center center/100% 100% no-repeat
 		h3
 			padding 130px 0 90px
 			font-size 84px
@@ -420,7 +420,7 @@ background:rgba(255,255,255,.8);
 		padding 50px
 		height 313px
 		box-sizing border-box
-		background #ffc211 url('../img/图层17.png') right 40px top 50px/217px auto no-repeat
+		background #ffc211 url('../img/1a20343ca32573824232ede7a7b37cd7.png') right 40px top 50px/217px auto no-repeat
 		h3
 			padding-bottom 40px
 			font-size 36px
@@ -435,10 +435,20 @@ background:rgba(255,255,255,.8);
 		text-align center
 		background #0289ff
 		.wrap
+			position relative
 			width 307px
 			height 307px
 			margin 0 auto
 			padding 50px 0
+			&:after
+				content ""
+				position absolute
+				top 50px
+				bottom 50px
+				left 0
+				right 0
+				border-radius 50%
+				box-shadow 0 0 10px #a6a6a6
 		.time
 			padding 10px 0
 			font-size 80px
@@ -464,8 +474,18 @@ background:rgba(255,255,255,.8);
 			justify-content space-between
 			background #0289ff
 			.progress
+				position relative
 				width 307px
 				height 307px
+				&:after
+					content ""
+					position absolute
+					top 0
+					bottom 0
+					left 0
+					right 0
+					border-radius 50%
+					box-shadow 0 0 10px #a6a6a6
 			.content
 				width 500px
 				.row
@@ -500,7 +520,7 @@ background:rgba(255,255,255,.8);
 			display flex
 			align-items center
 			justify-content space-around
-			background #ffc211 url('../img/图层11.png') right 10px bottom 30px/168px auto no-repeat
+			background #ffc211 url('../img/84b5098f1907384ebabb4531260eabef.png') right 10px bottom 30px/168px auto no-repeat
 			.wrap
 				margin 0
 			.content
@@ -513,7 +533,10 @@ background:rgba(255,255,255,.8);
 			display flex
 			align-items center
 			justify-content center
-			background url('../img/图层1_50.jpg') center center/100% 100% no-repeat
+			background url('../img/cf8e6d1d290f5f908eee5fa51c8554ac.jpg') center center/100% 100% no-repeat
+			.wrap
+				max-width 860px
+				width 100%
 			h3
 				padding-bottom 10px
 				font-size 36px
@@ -529,6 +552,7 @@ background:rgba(255,255,255,.8);
 						color #fff
 						background #0289ff
 						tr,th
+							border 2px solid #0289ff
 							font-weight normal
 							text-align center
 					tbody

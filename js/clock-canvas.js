@@ -17,7 +17,8 @@
 			_ctx.lineWidth = 10 * rem;
 
 
-			_ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI, false);
+			// _ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI, false);
+			_ctx.arc(0, 0, r, 0, 2 * Math.PI, false);
 			_ctx.fillStyle = "#fff";
 			_ctx.fill();
 
