@@ -54,7 +54,8 @@ function progress_bar() {
 		rem = width / 200,
 		r = width / 2,
 		timer = 0,
-		count = 0;
+		count = 0,
+		i = 0;
 
 
 
@@ -73,11 +74,23 @@ function progress_bar() {
 
 		_ctx.font = 46 * rem + "px Arial bold";
 		_ctx.fillStyle = '#fff'
-		_ctx.fillText(progress, -46 * rem, 0);
+		if (progress < 10) {
+			_ctx.fillText(progress, -23 * rem, 0);
+		} else {
+			if (progress == 100) {
+				_ctx.fillText(progress, -60 * rem, 0);
+			} else {
+				_ctx.fillText(progress, -46 * rem, 0);
+			}
+		}
 
 		_ctx.font = 26 * rem + "px Arial";
 		_ctx.fillStyle = '#fff'
-		_ctx.fillText("%", 10 * rem, 0);
+		if (progress == 100) {
+			_ctx.fillText("%", 23 * rem, 0);
+		} else {
+			_ctx.fillText("%", 10 * rem, 0);
+		}
 
 
 
@@ -96,8 +109,25 @@ function progress_bar() {
 		_ctx.rotate(90 * Math.PI / 180);
 
 	}
-	going(progress);
-	return going;
+
+	function animation(progress) {
+		timer = setInterval(function() {
+			if (i != progress) {
+				if (i < progress) {
+					i++;
+					going(i);
+				} else {
+					i--;
+					going(i);
+				}
+			} else {
+				clearInterval(timer);
+			}
+		}, 20, progress);
+
+	}
+	animation(progress);
+	return animation;
 }
 
 
@@ -105,4 +135,4 @@ var control_progress = new progress_bar()
 
 
 
-control_progress(50);
+// control_progress(50);
