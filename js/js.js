@@ -46,7 +46,7 @@ $('#progress').attr('height', $('.bb_2 .w50 .sign-in .progress').height());
 
 
 
-(function() {
+function progress_bar() {
 	var _ctx = document.getElementById('progress').getContext("2d"),
 		progress = parseInt($('#progress').attr('data-progress')),
 		width = $('#progress').width(),
@@ -57,55 +57,52 @@ $('#progress').attr('height', $('.bb_2 .w50 .sign-in .progress').height());
 		count = 0;
 
 
+
 	_ctx.translate(r, r);
 
+	function going(progress) {
+
+		_ctx.clearRect(-r, -r, width, height);
+
+		_ctx.beginPath();
+		_ctx.lineWidth = 5 * rem;
+		_ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI, false);
+		_ctx.strokeStyle = "#fff";
+		_ctx.stroke();
 
 
-	// timer = setInterval(function() {
+		_ctx.font = 46 * rem + "px Arial bold";
+		_ctx.fillStyle = '#fff'
+		_ctx.fillText(progress, -46 * rem, 0);
 
-	// 	if (count < progress) {
-	// 		count++;
-	_ctx.clearRect(-r, -r, width, height);
-
-	_ctx.beginPath();
-	_ctx.lineWidth = 5 * rem;
-	_ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI, false);
-	_ctx.strokeStyle = "#fff";
-	_ctx.stroke();
-
-
-	_ctx.font = 46 * rem + "px Arial bold";
-	_ctx.fillStyle = '#fff'
-	// if (count < 10) {
-	// _ctx.fillText(count, -23 * rem, 0);
-	// } else {
-	// _ctx.fillText(count, -46 * rem, 0);
-	_ctx.fillText(progress, -46 * rem, 0);
-	// }
-
-	_ctx.font = 26 * rem + "px Arial";
-	_ctx.fillStyle = '#fff'
-	_ctx.fillText("%", 10 * rem, 0);
+		_ctx.font = 26 * rem + "px Arial";
+		_ctx.fillStyle = '#fff'
+		_ctx.fillText("%", 10 * rem, 0);
 
 
 
-	_ctx.font = 16 * rem + "px Arial";
-	_ctx.fillStyle = '#fff'
-	_ctx.fillText("签到率", -16 * rem * 1.5, 1.5 * 16 * rem);
-	_ctx.beginPath();
+		_ctx.font = 16 * rem + "px Arial";
+		_ctx.fillStyle = '#fff'
+		_ctx.fillText("签到率", -16 * rem * 1.5, 1.5 * 16 * rem);
+		_ctx.beginPath();
 
-	_ctx.rotate(-90 * Math.PI / 180);
+		_ctx.rotate(-90 * Math.PI / 180);
 
-	_ctx.lineWidth = 10 * rem;
-	// _ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI * count / 100, false);
-	_ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI * progress / 100, false);
-	_ctx.strokeStyle = "#ffc211";
-	_ctx.stroke();
+		_ctx.lineWidth = 10 * rem;
+		_ctx.arc(0, 0, r - _ctx.lineWidth / 2, 0, 2 * Math.PI * progress / 100, false);
+		_ctx.strokeStyle = "#ffc211";
+		_ctx.stroke();
 
-	_ctx.rotate(90 * Math.PI / 180);
+		_ctx.rotate(90 * Math.PI / 180);
 
-	// 	} else {
-	// 		clearInterval(timer);
-	// 	}
-	// }, 10)
-})()
+	}
+	going(progress);
+	return going;
+}
+
+
+var control_progress = new progress_bar()
+
+
+
+control_progress(50);
