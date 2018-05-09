@@ -121,6 +121,7 @@ function progress_bar() {
 					going(i);
 				}
 			} else {
+				going(i);
 				clearInterval(timer);
 			}
 		}, 20, progress);
